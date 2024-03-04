@@ -133,6 +133,45 @@ public class LinkedList {
         return false;
     }
 
+    /// adding method
+
+    /**
+     * Add an element to the end of the linkedList
+     *
+     * @param s is the element that is being added in the linkedList
+     */
+    public void add(Song s) {
+/// this node is going to carry the new data that will be added
+        Node newNode = new Node(s);
+
+/// if the size of the linkedList is greater than the capacity or the added value is null
+        if (numElements > this.capacity || newNode == null) {
+            /// it will throw an indexOutOfBoundsException
+            throw new IndexOutOfBoundsException("Out of bounds");
+        }
+        /// if the size of the linkedList is equal to 0
+        else if (numElements == 0) {
+
+            // the head is set to the newNode
+            head = newNode;
+
+        } else {
+
+            /// A current node is being set to the head
+            Node current = head;
+
+            /// loop through the current node until the element is not null
+            while (current.getNext() != null) {
+                /// the next element is what current is going to be. Going up in the linkedList
+                current = current.getNext();
+            }
+            /// once it reaches the end of the linkedList add the new element ot be added at the end that was held in newNode
+            current.setNext(newNode);
+        }
+        //// track the element being added in the linkedList
+        numElements++;
+
+    }
 
 
 
