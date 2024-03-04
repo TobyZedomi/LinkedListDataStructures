@@ -165,5 +165,33 @@ public class LinkedListExtraTests {
 
     }
 
+    /**
+     * Test remove song to end of list where its null
+     */
+    @Test
+    public void testRemoveSongToEndOfListWhereItsNull() {
+
+
+        System.out.println("Test remove song to end of list where its null ");
+        Song s = new Song(null,null);
+        LinkedList instance = new LinkedList();
+
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+        instance.add(new Song("Carti", "WLR"));
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+        instance.add(new Song("Carti", "WLR"));
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+
+
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+
+            instance.remove(s);
+        });
+
+    }
+
 
 }
