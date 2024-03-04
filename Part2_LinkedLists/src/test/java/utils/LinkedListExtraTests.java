@@ -38,4 +38,25 @@ public class LinkedListExtraTests {
     }
 
 
+    /**
+     * Test if the element to be removed is not in the list
+     */
+    @Test
+    public void testRemoveIfValueIsNotThere() {
+
+        System.out.println("Test if the element to be removed is not in the list");
+
+        Song s = new Song("MJ","Thriller");
+        LinkedList instance = new LinkedList();
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+        instance.add(new Song("Carti", "WLR"));
+
+        boolean expResult = false;
+        boolean result = instance.remove(s);
+        assertEquals(expResult, result);
+    }
+
+
+
 }
