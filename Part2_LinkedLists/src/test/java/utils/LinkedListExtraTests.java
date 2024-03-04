@@ -239,4 +239,54 @@ public class LinkedListExtraTests {
     }
 
 
+
+    /**
+     * Test add element to the end of the list where the element appears multiple time in the linkedList already
+     */
+    @Test
+    public void testAddSongToEndOfListWithMultiple() {
+
+        System.out.println("Test add element to the end of the list where the element appears multiple time in the linkedList already ");
+        Song s = new Song("MJ","Thriller");
+        LinkedList instance = new LinkedList();
+
+        instance.add(new Song("Stevie Wonder", "Songs In The Key Of Life"));
+        instance.add(new Song("MJ", "Thriller"));
+        instance.add(new Song("My Bloody Valentine", "Loveless"));
+        instance.add(new Song("MJ", "Thriller"));
+        instance.add(new Song("Radiohead", "Ok Computer"));
+        instance.add(s);
+
+        LinkedList instance1 = new LinkedList();
+        instance1.add(new Song("Stevie Wonder", "Songs In The Key Of Life"));
+        instance1.add(new Song("MJ", "Thriller"));
+        instance1.add(new Song("My Bloody Valentine", "Loveless"));
+        instance1.add(new Song("MJ", "Thriller"));
+        instance1.add(new Song("Radiohead", "Ok Computer"));
+        instance1.add(new Song("MJ", "Thriller"));
+
+        for (int i = 0; i < instance.size();i++){
+
+            Song expResult = instance1.get(i);
+            Song Result = instance.get(i);
+
+            assertEquals(expResult,Result);
+        }
+
+
+        for (int i =0; i < instance.size();i++){
+
+            System.out.println(instance.get(i));
+        }
+
+        System.out.println("***");
+
+        for (int i =0; i < instance1.size();i++){
+
+            System.out.println(instance1.get(i));
+        }
+
+    }
+
+
 }
