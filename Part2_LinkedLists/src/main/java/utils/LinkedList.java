@@ -174,6 +174,35 @@ public class LinkedList {
     }
 
 
+    /// remove method
+
+    /**
+     * Remove the first instance of the element in the linkedList
+     *
+     * @param value is the element that is being searched
+     * @return true if the element was removed and false if the element was not removed
+     */
+    public boolean remove(Song value) {
+
+
+        /// if the size of the linkedList is greater than the capacity or the removed value is null
+        if (numElements > this.capacity || value == null) {
+            /// a indexOutOfBoundsException will be thrown
+            throw new IndexOutOfBoundsException("Out of bounds");
+        }
+        /// if the data in the linkedList is equal to the element in the parameter
+        else if (head.data.equals(value)) {
+            /// this removes the element from the linked-list
+            head = head.next;
+            // reduces the amount of elements in the linkedList by 1
+            numElements--;
+            /// return true as it has been removed from the linkedList
+            return true;
+        }
+
+        /// return false if not removed from the linkedList
+        return false;
+    }
 
 
 
