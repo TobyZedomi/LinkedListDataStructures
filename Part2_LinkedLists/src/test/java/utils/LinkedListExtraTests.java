@@ -82,6 +82,34 @@ public class LinkedListExtraTests {
 
     }
 
+    /**
+     * Test removing first element in the list where the element appears multiple time in the list
+     */
+    @Test
+    public void testRemoveIfMultipleValuesIsThere() {
+        System.out.println("Test removing first element in the list where the element appears multiple time in the list ");
+        Song s = new Song("MJ","Thriller");
+        LinkedList instance = new LinkedList();
+        instance.add(new Song("MJ", "Thriller"));
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+        instance.add(new Song("MJ", "Thriller"));
+        instance.add(new Song("MJ", "Thriller"));
+        instance.add(new Song("MJ", "Thriller"));
+
+
+        boolean expResult = true;
+        boolean result = instance.remove(s);
+        assertEquals(expResult, result);
+
+
+
+        for (int i =0; i < instance.size();i++){
+
+            System.out.println(instance.get(i));
+        }
+
+    }
 
 
 
