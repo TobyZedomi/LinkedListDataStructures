@@ -194,4 +194,49 @@ public class LinkedListExtraTests {
     }
 
 
+    /**
+     * Test add song to the end of the list where the element is not in the list
+     */
+    @Test
+    public void testAddSongToEndOfList() {
+
+        System.out.println("Test add song to the end of the list where the element is not in the list ");
+        Song s = new Song("MJ","Thriller");
+        LinkedList instance = new LinkedList();
+
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+        instance.add(new Song("Carti", "WLR"));
+        instance.add(s);
+
+        LinkedList instance1 = new LinkedList();
+        instance1.add(new Song("Prince", "Sign O The Times"));
+        instance1.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+        instance1.add(new Song("Carti", "WLR"));
+        instance1.add(new Song("MJ","Thriller"));
+
+        for (int i = 0; i < instance.size();i++){
+
+            Song expResult = instance1.get(i);
+            Song Result = instance.get(i);
+
+            assertEquals(expResult,Result);
+        }
+
+
+        for (int i =0; i < instance.size();i++){
+
+            System.out.println(instance.get(i));
+        }
+
+        System.out.println("***");
+
+        for (int i =0; i < instance1.size();i++){
+
+            System.out.println(instance1.get(i));
+        }
+
+    }
+
+
 }
