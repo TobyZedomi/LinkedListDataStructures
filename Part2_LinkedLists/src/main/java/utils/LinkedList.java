@@ -205,6 +205,24 @@ public class LinkedList {
     }
 
 
+    /// tail method
+
+    /**
+     * Add an element to the end of the linkedList
+     *
+     * @return the last element in the linkedList
+     */
+    public Song tail() {
+
+        /// if the linkedList is null it will throw an indexOutBoundsException
+        if (tail == null) {
+            throw new IndexOutOfBoundsException("Out Of Bounds");
+        }
+
+        /// return the last element in the linkedList
+        return tail.getData();
+    }
+
 
 
     protected static class Node {
