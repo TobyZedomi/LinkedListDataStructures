@@ -386,5 +386,34 @@ public class LinkedListExtraTests {
     }
 
 
+    /**
+     * Test add song to end of list where size of list is greater than the capacity
+     */
+    @Test
+    public void testAddSongToEndOfListWhereSizeOfListIsGreaterThanCapacity() {
+
+
+        System.out.println("Test add song to end of list where size of list is greater than the capacity ");
+        Song s = new Song("MJ","Thriller");
+        LinkedList instance = new LinkedList();
+
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+        instance.add(new Song("Carti", "WLR"));
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+        instance.add(new Song("Carti", "WLR"));
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+
+
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+
+            instance.add(s);
+        });
+
+    }
+
+
 
 }
