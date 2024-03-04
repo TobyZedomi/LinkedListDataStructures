@@ -139,4 +139,31 @@ public class LinkedListExtraTests {
 
     }
 
+    /**
+     * Test removing element from the list where the amount of elements in the list is greater than the capacity
+     */
+    @Test
+    public void testRemoveSongWhereSizeOfListIsGreaterThanCapacity() {
+
+        System.out.println("Test removing element from the list where the amount of elements in the list is greater than the capacity ");
+        Song s = new Song("MJ","Thriller");
+        LinkedList instance = new LinkedList();
+
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+        instance.add(new Song("Carti", "WLR"));
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+        instance.add(new Song("Carti", "WLR"));
+        instance.add(new Song("Prince", "Sign O The Times"));
+        instance.add(new Song("Jimi Hendrix", "Axis Bold As Love"));
+
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+
+            instance.remove(s);
+        });
+
+    }
+
+
 }
